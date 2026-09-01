@@ -1,904 +1,1421 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>For Chinnu ❤️ From Bebo</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #08080d;
-      color: #f8edf1;
-      overflow-x: hidden;
-    }
-
-    /* ---------- BACKGROUND ---------- */
-
-    .background {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255, 77, 125, 0.14), transparent 30%),
-        radial-gradient(circle at 80% 70%, rgba(160, 70, 255, 0.12), transparent 30%),
-        #08080d;
-    }
-
-    .stars {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.5;
-      animation: twinkle 3s infinite alternate;
-    }
-
-    @keyframes twinkle {
-      from { opacity: 0.15; }
-      to { opacity: 0.8; }
-    }
-
-    /* ---------- HERO ---------- */
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .small-text {
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: #e9a8bb;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 {
-      font-size: clamp(55px, 12vw, 110px);
-      font-weight: normal;
-      line-height: 0.9;
-      color: #fff;
-      text-shadow: 0 0 40px rgba(255, 80, 130, 0.25);
-    }
-
-    .hero h1 span {
-      color: #ff7198;
-      font-style: italic;
-    }
-
-    .hero-subtitle {
-      margin-top: 30px;
-      font-size: 20px;
-      line-height: 1.8;
-      color: #cdbec3;
-    }
-
-    .scroll {
-      margin-top: 70px;
-      color: #9f8d94;
-      font-size: 13px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(8px); }
-    }
-
-    /* ---------- SECTIONS ---------- */
-
-    section {
-      padding: 110px 20px;
-    }
-
-    .section-container {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .section-label {
-      color: #ff7198;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 11px;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: clamp(35px, 7vw, 58px);
-      font-weight: normal;
-      line-height: 1.1;
-      margin-bottom: 35px;
-    }
-
-    .text {
-      font-size: 19px;
-      line-height: 2;
-      color: #d5c9ce;
-    }
-
-    .text p {
-      margin-bottom: 25px;
-    }
-
-    /* ---------- DISTANCE ---------- */
-
-    .distance {
-      text-align: center;
-    }
-
-    .distance-line {
-      height: 1px;
-      background: linear-gradient(
-        to right,
-        transparent,
-        #ff7198,
-        transparent
-      );
-      margin: 50px 0;
-    }
-
-    .distance-message {
-      font-size: 25px;
-      line-height: 1.7;
-      font-style: italic;
-      color: #f8dbe3;
-    }
-
-    .distance-message strong {
-      color: #ff7198;
-    }
-
-    /* ---------- GYM ---------- */
-
-    .gym-card {
-      margin-top: 45px;
-      padding: 40px;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 25px;
-      background: rgba(255,255,255,0.025);
-      box-shadow: 0 20px 70px rgba(0,0,0,0.25);
-    }
-
-    .gym-icon {
-      font-size: 45px;
-      margin-bottom: 20px;
-    }
-
-    .gym-card h3 {
-      font-size: 30px;
-      font-weight: normal;
-      margin-bottom: 15px;
-    }
-
-    .gym-card p {
-      color: #c8bbc0;
-      line-height: 1.8;
-      font-size: 17px;
-    }
-
-    /* ---------- COUNTER ---------- */
-
-    .counter {
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .counter-number {
-      font-size: clamp(60px, 15vw, 120px);
-      color: #ff7198;
-      font-weight: bold;
-      line-height: 1;
-    }
-
-    .counter-label {
-      margin-top: 20px;
-      color: #bcaeb4;
-      font-size: 18px;
-    }
-
-    /* ---------- LETTER ---------- */
-
-    .letter {
-      background: linear-gradient(
-        180deg,
-        rgba(255,255,255,0.025),
-        transparent
-      );
-    }
-
-    .letter-paper {
-      background: rgba(255, 248, 250, 0.97);
-      color: #402a31;
-      border-radius: 25px;
-      padding: clamp(30px, 7vw, 70px);
-      box-shadow: 0 30px 100px rgba(0,0,0,0.35);
-    }
-
-    .letter-paper .section-label {
-      color: #b34163;
-    }
-
-    .letter-paper h2 {
-      color: #5c2939;
-    }
-
-    .letter-paper p {
-      font-size: 18px;
-      line-height: 2;
-      margin-bottom: 25px;
-    }
-
-    .quote {
-      margin: 45px 0;
-      padding: 30px;
-      border-left: 3px solid #d85c7e;
-      background: rgba(216,92,126,0.06);
-      font-size: 23px;
-      font-style: italic;
-      line-height: 1.7;
-      color: #7c344b;
-    }
-
-    .signature {
-      margin-top: 50px;
-      text-align: right;
-      font-size: 24px;
-      font-style: italic;
-      color: #743047;
-    }
-
-    /* ---------- PROMISES ---------- */
-
-    .promises {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      margin-top: 45px;
-    }
-
-    .promise {
-      padding: 30px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .promise span {
-      display: block;
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .promise p {
-      color: #cbbec4;
-      line-height: 1.7;
-    }
-
-    /* ---------- FINAL ---------- */
-
-    .final {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .final-content {
-      max-width: 750px;
-    }
-
-    .final-heart {
-      font-size: 65px;
-      animation: heartbeat 1.5s infinite;
-      margin-bottom: 30px;
-    }
-
-    @keyframes heartbeat {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.12);
-      }
-    }
-
-    .final h2 {
-      font-size: clamp(40px, 8vw, 75px);
-    }
-
-    .final p {
-      font-size: 20px;
-      line-height: 1.9;
-      color: #c9bbc1;
-    }
-
-    .bebo {
-      margin-top: 45px;
-      color: #ff7198;
-      font-size: 26px;
-      font-style: italic;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #6e6267;
-      font-size: 12px;
-      letter-spacing: 2px;
-    }
-
-    /* ---------- MOBILE ---------- */
-
-    @media (max-width: 650px) {
-
-      section {
-        padding: 80px 18px;
-      }
-
-      .text {
-        font-size: 17px;
-      }
-
-      .promises {
-        grid-template-columns: 1fr;
-      }
-
-      .gym-card {
-        padding: 28px;
-      }
-
-      .letter-paper {
-        padding: 30px 22px;
-      }
-
-      .letter-paper p {
-        font-size: 16px;
-      }
-
-      .quote {
-        font-size: 19px;
-        padding: 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Chinnu ❤️</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #09070b;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255, 55, 120, 0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(170, 50, 150, 0.14),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #09070b,
+                    #160914,
+                    #09070b
+                );
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            color: #ff5d91;
+            font-size: 18px;
+            opacity: 0;
+
+            animation: floatHeart 10s linear infinite;
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 25%;
+            animation-delay: 3s;
+        }
+
+        .heart:nth-child(3) {
+            left: 45%;
+            animation-delay: 6s;
+        }
+
+        .heart:nth-child(4) {
+            left: 70%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(5) {
+            left: 88%;
+            animation-delay: 5s;
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.6;
+            }
+
+            85% {
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .small-title {
+            color: #ff8aad;
+            font-size: 14px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(65px, 15vw, 130px);
+            font-weight: normal;
+            line-height: 0.9;
+
+            background: linear-gradient(
+                90deg,
+                #fff,
+                #ff83a7,
+                #fff
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span {
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            margin-top: 35px;
+
+            font-size: 20px;
+            line-height: 1.8;
+
+            color: #d6c6cd;
+        }
+
+        .hero-subtitle strong {
+            color: #ff7199;
+        }
+
+        .scroll {
+            margin-top: 70px;
+
+            color: #8f7e86;
+
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        section {
+            padding: 110px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .label {
+            color: #ff7199;
+
+            text-transform: uppercase;
+            letter-spacing: 4px;
+
+            font-size: 11px;
+
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: clamp(40px, 8vw, 65px);
+            font-weight: normal;
+            line-height: 1.1;
+
+            margin-bottom: 35px;
+        }
+
+        .text {
+            font-size: 18px;
+            line-height: 2;
+
+            color: #cfc1c7;
+        }
+
+        .text p {
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           DISTANCE SECTION
+        ========================= */
+
+        .distance {
+            text-align: center;
+        }
+
+        .line {
+            height: 1px;
+
+            margin: 45px 0;
+
+            background: linear-gradient(
+                to right,
+                transparent,
+                #ff7199,
+                transparent
+            );
+        }
+
+        .big-quote {
+            font-size: clamp(24px, 5vw, 34px);
+
+            line-height: 1.6;
+
+            font-style: italic;
+
+            color: #f8d9e2;
+        }
+
+        .big-quote strong {
+            color: #ff7199;
+        }
+
+
+        /* =========================
+           GYM SECTION
+        ========================= */
+
+        .gym-card {
+
+            margin-top: 45px;
+
+            padding: 40px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.035);
+
+            border: 1px solid rgba(255,113,153,0.18);
+
+            box-shadow:
+                0 20px 80px rgba(0,0,0,0.3);
+        }
+
+        .gym-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .gym-card h3 {
+            font-size: 30px;
+            font-weight: normal;
+
+            margin-bottom: 20px;
+        }
+
+        .gym-card p {
+            color: #cfc1c7;
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           LOVE LETTER
+        ========================= */
+
+        .letter-section {
+            padding-top: 80px;
+        }
+
+        .letter {
+
+            background: #fff8fa;
+
+            color: #432631;
+
+            padding: clamp(30px, 7vw, 70px);
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 30px 100px rgba(0,0,0,0.4);
+        }
+
+        .letter .label {
+            color: #b53f62;
+        }
+
+        .letter h2 {
+            color: #5d293b;
+        }
+
+        .letter p {
+
+            font-size: 18px;
+
+            line-height: 2;
+
+            margin-bottom: 25px;
+        }
+
+        .quote {
+
+            margin: 45px 0;
+
+            padding: 30px;
+
+            border-left: 3px solid #d65378;
+
+            background: rgba(214,83,120,0.07);
+
+            color: #7d354b;
+
+            font-size: 23px;
+
+            font-style: italic;
+
+            line-height: 1.7;
+        }
+
+        .signature {
+
+            margin-top: 50px;
+
+            text-align: right;
+
+            color: #743047;
+
+            font-size: 24px;
+
+            font-style: italic;
+        }
+
+
+        /* =========================
+           QUEST
+        ========================= */
+
+        .quest-section {
+            text-align: center;
+
+            padding-top: 130px;
+            padding-bottom: 100px;
+        }
+
+        .quest-box {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            padding: 55px 30px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.05),
+                    rgba(255,70,120,0.035)
+                );
+
+            border: 1px solid rgba(255,92,140,0.45);
+
+            box-shadow:
+                0 0 50px rgba(255,70,120,0.08);
+        }
+
+        .quest-small {
+
+            color: #ff7199;
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .quest-box h2 {
+
+            margin-bottom: 20px;
+
+            font-size: clamp(32px, 7vw, 55px);
+        }
+
+        .quest-box p {
+
+            color: #bcaeb5;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           REVEAL BUTTON
+        ========================= */
+
+        .reveal-button {
+
+            border: none;
+
+            cursor: pointer;
+
+            padding: 18px 45px;
+
+            border-radius: 50px;
+
+            background: linear-gradient(
+                135deg,
+                #ff4f82,
+                #d62f64
+            );
+
+            color: white;
+
+            font-family: Georgia, serif;
+
+            font-size: 18px;
+
+            box-shadow:
+                0 10px 35px rgba(255,70,120,0.3);
+
+            transition: all 0.3s ease;
+        }
+
+        .reveal-button:hover {
+
+            transform: translateY(-4px) scale(1.03);
+
+            box-shadow:
+                0 15px 45px rgba(255,70,120,0.45);
+        }
+
+        .reveal-button:active {
+
+            transform: scale(0.96);
+        }
+
+
+        /* =========================
+           PHOTO REVEAL
+        ========================= */
+
+        .photo-container {
+
+            max-width: 850px;
+
+            margin: 55px auto 0;
+
+            display: none;
+
+            animation: revealPhoto 1.2s ease forwards;
+        }
+
+        .photo-container.show {
+            display: block;
+        }
+
+        @keyframes revealPhoto {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.85)
+                    translateY(30px);
+
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+
+            }
+        }
+
+        .photo-wrapper {
+
+            position: relative;
+
+            padding: 8px;
+
+            border-radius: 25px;
+
+            background: linear-gradient(
+                135deg,
+                #ff7199,
+                #ffb2c7,
+                #ff7199
+            );
+
+            box-shadow:
+                0 25px 100px rgba(255,70,120,0.25);
+        }
+
+        .photo-wrapper img {
+
+            width: 100%;
+
+            display: block;
+
+            border-radius: 19px;
+
+            max-height: 800px;
+
+            object-fit: cover;
+        }
+
+        .photo-caption {
+
+            margin-top: 25px;
+
+            font-size: 22px;
+
+            font-style: italic;
+
+            color: #f2cbd7;
+        }
+
+
+        /* =========================
+           AFTER REVEAL
+        ========================= */
+
+        .after-reveal {
+
+            display: none;
+
+            text-align: center;
+
+            margin-top: 60px;
+
+            animation: fadeIn 1s ease;
+        }
+
+        .after-reveal.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .after-reveal h3 {
+
+            font-size: 35px;
+
+            font-weight: normal;
+
+            margin-bottom: 20px;
+
+            color: #ff8aaa;
+        }
+
+        .after-reveal p {
+
+            color: #bcaeb5;
+
+            font-size: 18px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           FINAL SECTION
+        ========================= */
+
+        .final {
+
+            min-height: 80vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .final-content {
+            max-width: 750px;
+        }
+
+        .final-heart {
+
+            font-size: 65px;
+
+            margin-bottom: 30px;
+
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .final h2 {
+            font-size: clamp(40px, 8vw, 75px);
+        }
+
+        .final p {
+
+            color: #c7b9c0;
+
+            font-size: 19px;
+
+            line-height: 2;
+        }
+
+        .bebo {
+
+            margin-top: 45px;
+
+            color: #ff7199;
+
+            font-size: 27px;
+
+            font-style: italic;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #655960;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 80px 18px;
+            }
+
+            .hero {
+                min-height: 95vh;
+            }
+
+            .hero-subtitle {
+                font-size: 17px;
+            }
+
+            .text {
+                font-size: 16px;
+            }
+
+            .gym-card {
+                padding: 28px;
+            }
+
+            .letter {
+                padding: 30px 22px;
+            }
+
+            .letter p {
+                font-size: 16px;
+            }
+
+            .quote {
+                font-size: 19px;
+                padding: 20px;
+            }
+
+            .quest-box {
+                padding: 45px 22px;
+            }
+
+            .reveal-button {
+                width: 100%;
+                padding: 17px 20px;
+            }
+
+        }
+
+    </style>
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     BACKGROUND
+========================= -->
+
 <div class="background"></div>
 
-<div class="stars">
-  <span class="star" style="left:8%;top:15%;"></span>
-  <span class="star" style="left:17%;top:45%;"></span>
-  <span class="star" style="left:28%;top:25%;"></span>
-  <span class="star" style="left:42%;top:12%;"></span>
-  <span class="star" style="left:55%;top:38%;"></span>
-  <span class="star" style="left:68%;top:18%;"></span>
-  <span class="star" style="left:79%;top:55%;"></span>
-  <span class="star" style="left:91%;top:30%;"></span>
-  <span class="star" style="left:35%;top:75%;"></span>
-  <span class="star" style="left:62%;top:82%;"></span>
+<div class="hearts">
+
+    <span class="heart">♡</span>
+    <span class="heart">♥</span>
+    <span class="heart">♡</span>
+    <span class="heart">♥</span>
+    <span class="heart">♡</span>
+
 </div>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-  <div class="hero-content">
+    <div class="hero-content">
 
-    <div class="small-text">
-      A little corner of the internet
+        <div class="small-title">
+            A little something from
+        </div>
+
+        <h1>
+            <span>Chinnu</span>
+        </h1>
+
+        <div class="hero-subtitle">
+
+            For the girl who calls me
+            <strong>Bebo</strong> ❤️
+
+            <br><br>
+
+            I made this little place on the internet
+            because some feelings are simply too big
+            for a WhatsApp message.
+
+        </div>
+
+        <div class="scroll">
+            ↓ &nbsp; Keep going, my love
+        </div>
+
     </div>
-
-    <h1>
-      For <span>Chinnu</span>
-    </h1>
-
-    <div class="hero-subtitle">
-      From the boy you call <strong>Bebo</strong> ❤️
-      <br><br>
-      Some things are too big to fit inside a message.
-      <br>
-      So I made you a whole little world instead.
-    </div>
-
-    <div class="scroll">
-      ↓ &nbsp; keep scrolling, my love
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- ================= DISTANCE ================= -->
+
+<!-- =========================
+     DISTANCE
+========================= -->
 
 <section class="distance">
 
-  <div class="section-container">
+    <div class="container">
 
-    <div class="section-label">
-      Us, even from far away
+        <div class="label">
+            Our story
+        </div>
+
+        <h2>
+            Miles apart.<br>
+            Still together.
+        </h2>
+
+        <div class="line"></div>
+
+        <div class="big-quote">
+
+            "Distance can keep my hands away from you,
+            <br>
+
+            but it has never been able to keep
+            <strong>you away from my heart.</strong>"
+
+        </div>
+
+        <div class="line"></div>
+
+        <div class="text">
+
+            <p>
+                Sometimes I really hate this distance, Chinnu.
+            </p>
+
+            <p>
+                I hate that when I miss you,
+                I can't just come to you.
+                I can't knock on your door,
+                sit next to you,
+                hold your hand,
+                or give you the hug you've been waiting for.
+            </p>
+
+            <p>
+                I wish I could make the distance disappear
+                whenever I wanted.
+            </p>
+
+            <p>
+                But until that day comes,
+                I'll keep finding little ways
+                to feel close to you.
+            </p>
+
+        </div>
+
     </div>
-
-    <h2>
-      Distance is strange.
-    </h2>
-
-    <div class="distance-line"></div>
-
-    <div class="distance-message">
-      You can be miles away from me...
-      <br>
-      and somehow still be
-      <strong>the closest person to my heart.</strong>
-    </div>
-
-    <div class="distance-line"></div>
-
-    <div class="text">
-
-      <p>
-        I hate the distance sometimes, Chinnu.
-      </p>
-
-      <p>
-        I hate that when I miss you, I can't simply walk over to you.
-        I can't just knock on your door, sit beside you, hold your hand,
-        or look at you and say, "I'm here."
-      </p>
-
-      <p>
-        There are moments when I wish the distance between us could disappear
-        for just five minutes.
-      </p>
-
-      <p>
-        Five minutes would be enough.
-      </p>
-
-      <p>
-        Just enough time to see you, hug you tightly, and remind myself that
-        you're real and that all these miles are worth crossing.
-      </p>
-
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- ================= GYM ================= -->
+
+<!-- =========================
+     GYM
+========================= -->
 
 <section>
 
-  <div class="section-container">
+    <div class="container">
 
-    <div class="section-label">
-      Our little coincidence
+        <div class="label">
+            Something I love about us
+        </div>
+
+        <h2>
+            Different gyms.<br>
+            Same journey.
+        </h2>
+
+        <div class="gym-card">
+
+            <div class="gym-icon">
+                🏋️‍♀️ ❤️ 🏋️‍♂️
+            </div>
+
+            <h3>
+                You're there. I'm here.
+            </h3>
+
+            <p>
+                You're going to your gym.
+                I'm going to mine.
+            </p>
+
+            <br>
+
+            <p>
+                Different places.
+                Different workouts.
+                Different days.
+            </p>
+
+            <br>
+
+            <p>
+                But I love knowing that somewhere,
+                at almost the same time,
+                the girl I love is also working on herself.
+            </p>
+
+            <br>
+
+            <p>
+                Maybe one day we won't have
+                different gyms anymore.
+            </p>
+
+            <br>
+
+            <p>
+                Maybe we'll walk into the same gym,
+                complain about the same workout,
+                fight over who gets the equipment first,
+                and then laugh about it.
+            </p>
+
+            <br>
+
+            <p>
+                Until then...
+                I'll keep cheering for you from wherever I am.
+            </p>
+
+        </div>
+
     </div>
-
-    <h2>
-      Different gyms.<br>
-      Same goal.
-    </h2>
-
-    <div class="gym-card">
-
-      <div class="gym-icon">🏋️‍♀️ ❤️ 🏋️‍♂️</div>
-
-      <h3>
-        Somewhere between your workout and mine...
-      </h3>
-
-      <p>
-        You're at your gym.
-        I'm at mine.
-        We're probably lifting different weights,
-        listening to different songs,
-        surrounded by different people.
-      i</p>
-
-      <br>
-
-      <p>
-        But I love thinking that somewhere out there,
-        the girl I love is working hard too.
-      </p>
-
-      <br>
-
-      <p>
-        Maybe we're both tired.
-        Maybe we're both complaining about the last set.
-        Maybe we're both pretending we still have energy.
-      </p>
-
-      <br>
-
-      <p>
-        And somehow, even when we're not together,
-        we're still doing something together ||GYM|| Thanks for opting GYM, as you said we can have someting to discuss upon.
-      </p>
-
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- ================= MISSING HER ================= -->
+
+<!-- =========================
+     MISSING HER
+========================= -->
 
 <section>
 
-  <div class="section-container">
+    <div class="container">
 
-    <div class="section-label">
-      What I don't always say
+        <div class="label">
+            What I don't always say
+        </div>
+
+        <h2>
+            I miss you.
+        </h2>
+
+        <div class="text">
+
+            <p>
+                I miss you in the obvious moments.
+            </p>
+
+            <p>
+                But I also miss you in the tiny moments.
+            </p>
+
+            <p>
+                When something funny happens
+                and you're the first person I want to tell.
+            </p>
+
+            <p>
+                When I'm tired and I just want to hear your voice.
+            </p>
+
+            <p>
+                When the day becomes quiet
+                and suddenly I realize how far away you are.
+            </p>
+
+            <p>
+                I miss your presence.
+                Your voice.
+                Your silly moments.
+                Your smile.
+            </p>
+
+            <p>
+                And honestly...
+            </p>
+
+            <p>
+                I miss the version of life
+                where I don't have to miss you.
+            </p>
+
+        </div>
+
     </div>
-
-    <h2>
-      I miss you.
-    </h2>
-
-    <div class="text">
-
-      <p>
-        Not only during the big moments.
-      </p>
-
-      <p>
-        I miss you in the smallest ones.
-      </p>
-
-      <p>
-        When I see something funny and instinctively want to tell you.
-      </p>
-
-      <p>
-        When something happens during my day and I wish you were there
-        so I could tell you about it immediately.
-      </p>
-
-      <p>
-        When I'm tired and all I want is the comfort of talking to you.
-      </p>
-
-      <p>
-        At night, when everything becomes quiet,
-        somehow that's when I feel the distance the most.
-      </p>
-
-      <p>
-        I miss your presence.
-        I miss your voice.
-        I miss your little ways.
-        I miss simply having you close.
-      </p>
-
-      <p>
-        But more than anything...
-        I miss the version of life where I don't have to miss you.
-      </p>
-
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- ================= LETTER ================= -->
 
-<section class="letter">
+<!-- =========================
+     LOVE LETTER
+========================= -->
 
-  <div class="section-container">
+<section class="letter-section">
 
-    <div class="letter-paper">
+    <div class="container">
 
-      <div class="section-label">
-        A letter from Bebo
-      </div>
+        <div class="letter">
 
-      <h2>
-        My Chinnu,
-      </h2>
+            <div class="label">
+                From your Bebo
+            </div>
 
-      <p>
-        I don't know exactly when you became such a huge part of my life.
-        Maybe it happened slowly. Maybe it happened without either of us
-        noticing.
-      </p>
+            <h2>
+                My Chinnu,
+            </h2>
 
-      <p>
-        But somewhere along the way, you stopped being just someone I love
-        and became someone I can't imagine my life without.
-      </p>
+            <p>
+                I don't know if I will ever find the perfect words
+                to explain what you mean to me.
+            </p>
 
-      <p>
-        You became the person I look for in my notifications.
-        The person I want to tell things to.
-        The person whose happiness matters to me.
-        The person I miss when the day gets quiet.
-      </p>
+            <p>
+                But I'm going to try anyway.
+            </p>
 
-      <div class="quote">
-        "I don't need you to be beside me every second.
-        I just need to know that no matter how far apart we are,
-        we're still choosing each other."
-      </div>
+            <p>
+                Somewhere along the way,
+                you became much more than just my girlfriend.
+            </p>
 
-      <p>
-        Chinnu, I know long distance isn't always easy.
-        There will be days when we miss each other more than usual.
-        Days when a call isn't enough.
-        Days when we wish we could just be together.
-      </p>
+            <p>
+                You became the person I look for.
+                The person I want to talk to.
+                The person I want to tell everything to.
+                The person whose happiness genuinely matters to me.
+            </p>
 
-      <p>
-        But I want you to know that I am not scared of the distance.
-      </p>
+            <div class="quote">
 
-      <p>
-        Because distance is temporary.
-        What I feel for you isn't.
-      </p>
+                "You are far away from my arms,
+                but never far away from my thoughts."
 
-      <p>
-        I want to see you achieve your dreams.
-        I want to see you become stronger, happier and more confident.
-        I want to be there cheering for you when things go right,
-        and holding you together when things don't.
-      </p>
+            </div>
 
-      <p>
-        I want to know all the versions of you.
-        The happy you.
-        The tired you.
-        The angry you.
-        The silly you.
-        The emotional you.
-        The girl who goes to the gym and gives her best.
-        The girl who sometimes needs someone to simply say,
-        "It's okay, I'm here."
-      </p>
+            <p>
+                I know long distance isn't always easy.
+            </p>
 
-      <p>
-        And I want you to know that I am here.
-      </p>
+            <p>
+                There will be days when we miss each other badly.
+                Days when a phone call doesn't feel like enough.
+                Days when all we want is to sit next to each other
+                without saying anything.
+            </p>
 
-      <p>
-        Even from far away.
-      </p>
+            <p>
+                But I don't want the distance to make us forget
+                why we started.
+            </p>
 
-      <p>
-        I may not be able to hold your hand today.
-        But I can still hold your heart carefully.
-      </p>
+            <p>
+                I want us to keep growing.
+                Keep supporting each other.
+                Keep going to our gyms.
+                Keep chasing our goals.
+                Keep becoming better versions of ourselves.
+            </p>
 
-      <p>
-        I may not be able to see you whenever I want.
-        But I will still look forward to every moment I get with you.
-      </p>
+            <p>
+                And someday,
+                I want all these miles between us
+                to become just a story we tell.
+            </p>
 
-      <p>
-        And one day, I hope all these video calls,
-        countdowns, missed hugs and "I wish you were here"
-        become stories we tell about the time when we were far apart.
-      </p>
+            <p>
+                A story about two people who were far apart
+                but decided that being apart
+                was never going to stop them from choosing each other.
+            </p>
 
-      <p>
-        Until then...
-      </p>
+            <p>
+                Until that day comes,
+                I will keep missing you.
+            </p>
 
-      <p>
-        I'll keep loving you from here.
-      </p>
+            <p>
+                And I will keep loving you.
+            </p>
 
-      <p>
-        I'll keep missing you.
-      </p>
+            <p>
+                Every single day.
+            </p>
 
-      <p>
-        I'll keep choosing you.
-      </p>
+            <div class="signature">
 
-      <p>
-        And I'll keep waiting for the day when the distance between us
-        is finally nothing more than a memory.
-      </p>
+                Yours always,<br>
 
-      <div class="signature">
-        Yours,<br>
-        Bebo ❤️
-      </div>
+                <strong>Bebo ❤️</strong>
+
+            </div>
+
+        </div>
 
     </div>
-
-  </div>
 
 </section>
 
 
-<!-- ================= PROMISES ================= -->
 
-<section>
+<!-- =========================
+     THE QUEST
+========================= -->
 
-  <div class="section-container">
+<section class="quest-section">
 
-    <div class="section-label">
-      Things I want you to remember
+    <div class="container">
+
+        <div class="quest-box">
+
+            <div class="quest-small">
+                ✦ A Little Quest For You ✦
+            </div>
+
+            <h2>
+                Okay Chinnu...
+            </h2>
+
+            <p>
+                You've made it this far.
+                <br>
+                So I have one very important question for you.
+            </p>
+
+            <h2>
+                Do you wanna see<br>
+                <span style="color:#ff7199;">
+                    Box Office?
+                </span>
+            </h2>
+
+            <p>
+                I have something waiting for you...
+                <br>
+                but you have to click the button. ❤️
+            </p>
+
+            <button
+                class="reveal-button"
+                onclick="revealBoxOffice()">
+
+                Then Click Here →
+                
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             HIDDEN PHOTO
+        ========================= -->
+
+        <div
+            id="photoContainer"
+            class="photo-container">
+
+            <div class="photo-wrapper">
+
+                <img
+                    src="images/chinnu.jpg"
+                    alt="Chinnu ❤️">
+
+            </div>
+
+            <div class="photo-caption">
+
+                There she is...
+                <br>
+                My favorite girl in the whole world. ❤️
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             AFTER PHOTO MESSAGE
+        ========================= -->
+
+        <div
+            id="afterReveal"
+            class="after-reveal">
+
+            <h3>
+                Box Office is OPEN ❤️
+            </h3>
+
+            <p>
+                Okay, okay...
+                I know I said it was a quest.
+            </p>
+
+            <p>
+                But honestly,
+                I just wanted an excuse to show
+                my favorite person on this website.
+            </p>
+
+            <p>
+                Don't get too proud though. 😌
+                <br>
+                Your Bebo still has more surprises.
+            </p>
+
+        </div>
+
     </div>
-
-    <h2>
-      A few promises.
-    </h2>
-
-    <div class="promises">
-
-      <div class="promise">
-        <span>❤️</span>
-        <p>
-          I promise to keep choosing you,
-          even on the difficult days.
-        </p>
-      </div>
-
-      <div class="promise">
-        <span>🌙</span>
-        <p>
-          I promise that distance will never make
-          you less important to me.
-        </p>
-      </div>
-
-      <div class="promise">
-        <span>🏋️‍♀️</span>
-        <p>
-          I promise to cheer for your goals,
-          your growth and every little victory.
-        </p>
-      </div>
-
-      <div class="promise">
-        <span>🤍</span>
-        <p>
-          I promise to keep making memories with you,
-          even when the miles make it difficult.
-        </p>
-      </div>
-
-      <div class="promise">
-        <span>🫂</span>
-        <p>
-          And when I finally get to see you,
-          I'm going to make up for every hug we missed.
-        </p>
-      </div>
-
-      <div class="promise">
-        <span>∞</span>
-        <p>
-          Most importantly,
-          I promise to never stop reminding you
-          how loved you are.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- ================= FINAL ================= -->
+
+<!-- =========================
+     FINAL MESSAGE
+========================= -->
 
 <section class="final">
 
-  <div class="final-content">
+    <div class="final-content">
 
-    <div class="final-heart">
-      ❤️
+        <div class="final-heart">
+            ❤️
+        </div>
+
+        <h2>
+            Until I can hold you...
+        </h2>
+
+        <p>
+
+            I'll keep holding onto every call,
+            every message,
+            every memory,
+            every laugh,
+            and every little moment
+            that makes the distance feel smaller.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            And whenever you miss me,
+            remember that somewhere out there
+            your Bebo is missing you too.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            One day,
+            there won't be a screen between us.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            Just you.
+            Me.
+            And all the time we lost
+            waiting to finally be together.
+
+        </p>
+
+        <div class="bebo">
+
+            I love you, Chinnu.
+            ❤️
+
+            <br><br>
+
+            — Your Bebo
+
+        </div>
+
     </div>
-
-    <h2>
-      Until I can hold you...
-    </h2>
-
-    <p>
-      I'll hold onto every call,
-      every message,
-      every memory,
-      every picture,
-      every laugh,
-      and every little piece of you
-      that makes the distance feel smaller.
-    </p>
-
-    <br>
-
-    <p>
-      And when you miss me,
-      remember this:
-    </p>
-
-    <br>
-
-    <p>
-      Somewhere out there,
-      your Bebo is probably looking at the same moon,
-      missing his Chinnu,
-      and smiling because he knows
-      he has someone worth waiting for.
-    </p>
-
-    <div class="bebo">
-      I love you, Chinnu. ❤️
-      <br><br>
-      — Your Bebo
-    </div>
-
-  </div>
 
 </section>
 
 
+
 <footer>
-  MADE WITH LOVE · FOR CHINNU · FROM BEBO ❤️
+
+    MADE WITH LOVE · FOR CHINNU · FROM BEBO ❤️
+
 </footer>
 
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
-  // Create a few random stars
-  const stars = document.querySelector(".stars");
 
-  for (let i = 0; i < 60; i++) {
-    const star = document.createElement("span");
-    star.className = "star";
+    function revealBoxOffice() {
 
-    star.style.left = Math.random() * 100 + "%";
-    star.style.top = Math.random() * 100 + "%";
-    star.style.animationDelay = Math.random() * 3 + "s";
+        const photo = document.getElementById("photoContainer");
 
-    stars.appendChild(star);
-  }
+        const message = document.getElementById("afterReveal");
+
+        const button = document.querySelector(".reveal-button");
+
+
+        /* Show the photo */
+
+        photo.classList.add("show");
+
+
+        /* Show the message */
+
+        message.classList.add("show");
+
+
+        /* Change button */
+
+        button.innerHTML = "❤️ Box Office Unlocked ❤️";
+
+
+        /* Disable button */
+
+        button.disabled = true;
+
+        button.style.cursor = "default";
+
+
+        /* Scroll smoothly to photo */
+
+        setTimeout(function() {
+
+            photo.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 200);
+
+    }
+
 </script>
+
 
 </body>
 </html>
