@@ -1,0 +1,54 @@
+name: Jobs and Artifacts Lab
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          echo "Pretending to lint..."
+          echo "no issues" > lint-report.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lint-report
+          path: lint-report.txt
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          echo "Pretending to test..."
+          echo "3 passed" > test-report.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: test-report.txt
+
+  build:
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: lint-report
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: test-report
+
+      - run: |
+          echo "--- lint report ---"
+          cat lint-report.txt
+
+          echo "--- test report ---"
+          cat test-report.txt
+
+          echo "Build only runs after BOTH lint and test succeed"
