@@ -32,7 +32,7 @@ jobs:
           path: test-report.txt
 
   build:
-    needs: [lint, test]
+    needs: [lint1, test]
     runs-on: ubuntu-latest
 
     steps:
