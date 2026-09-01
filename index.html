@@ -1,1 +1,904 @@
-<!DOCTYPE html> <html> <head><title>Deepak's DevOps Lab</title></head> <body> <h1>Hello from GitHub Pages!</h1> <p>Deployed automatically by a GitHub Actions workflow.</p> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>For Chinnu ❤️ From Bebo</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #08080d;
+      color: #f8edf1;
+      overflow-x: hidden;
+    }
+
+    /* ---------- BACKGROUND ---------- */
+
+    .background {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 77, 125, 0.14), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(160, 70, 255, 0.12), transparent 30%),
+        #08080d;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: twinkle 3s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.15; }
+      to { opacity: 0.8; }
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .small-text {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: #e9a8bb;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 12vw, 110px);
+      font-weight: normal;
+      line-height: 0.9;
+      color: #fff;
+      text-shadow: 0 0 40px rgba(255, 80, 130, 0.25);
+    }
+
+    .hero h1 span {
+      color: #ff7198;
+      font-style: italic;
+    }
+
+    .hero-subtitle {
+      margin-top: 30px;
+      font-size: 20px;
+      line-height: 1.8;
+      color: #cdbec3;
+    }
+
+    .scroll {
+      margin-top: 70px;
+      color: #9f8d94;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* ---------- SECTIONS ---------- */
+
+    section {
+      padding: 110px 20px;
+    }
+
+    .section-container {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: #ff7198;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 11px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: clamp(35px, 7vw, 58px);
+      font-weight: normal;
+      line-height: 1.1;
+      margin-bottom: 35px;
+    }
+
+    .text {
+      font-size: 19px;
+      line-height: 2;
+      color: #d5c9ce;
+    }
+
+    .text p {
+      margin-bottom: 25px;
+    }
+
+    /* ---------- DISTANCE ---------- */
+
+    .distance {
+      text-align: center;
+    }
+
+    .distance-line {
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        #ff7198,
+        transparent
+      );
+      margin: 50px 0;
+    }
+
+    .distance-message {
+      font-size: 25px;
+      line-height: 1.7;
+      font-style: italic;
+      color: #f8dbe3;
+    }
+
+    .distance-message strong {
+      color: #ff7198;
+    }
+
+    /* ---------- GYM ---------- */
+
+    .gym-card {
+      margin-top: 45px;
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 25px;
+      background: rgba(255,255,255,0.025);
+      box-shadow: 0 20px 70px rgba(0,0,0,0.25);
+    }
+
+    .gym-icon {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    .gym-card h3 {
+      font-size: 30px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .gym-card p {
+      color: #c8bbc0;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    /* ---------- COUNTER ---------- */
+
+    .counter {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .counter-number {
+      font-size: clamp(60px, 15vw, 120px);
+      color: #ff7198;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .counter-label {
+      margin-top: 20px;
+      color: #bcaeb4;
+      font-size: 18px;
+    }
+
+    /* ---------- LETTER ---------- */
+
+    .letter {
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.025),
+        transparent
+      );
+    }
+
+    .letter-paper {
+      background: rgba(255, 248, 250, 0.97);
+      color: #402a31;
+      border-radius: 25px;
+      padding: clamp(30px, 7vw, 70px);
+      box-shadow: 0 30px 100px rgba(0,0,0,0.35);
+    }
+
+    .letter-paper .section-label {
+      color: #b34163;
+    }
+
+    .letter-paper h2 {
+      color: #5c2939;
+    }
+
+    .letter-paper p {
+      font-size: 18px;
+      line-height: 2;
+      margin-bottom: 25px;
+    }
+
+    .quote {
+      margin: 45px 0;
+      padding: 30px;
+      border-left: 3px solid #d85c7e;
+      background: rgba(216,92,126,0.06);
+      font-size: 23px;
+      font-style: italic;
+      line-height: 1.7;
+      color: #7c344b;
+    }
+
+    .signature {
+      margin-top: 50px;
+      text-align: right;
+      font-size: 24px;
+      font-style: italic;
+      color: #743047;
+    }
+
+    /* ---------- PROMISES ---------- */
+
+    .promises {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 45px;
+    }
+
+    .promise {
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .promise span {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .promise p {
+      color: #cbbec4;
+      line-height: 1.7;
+    }
+
+    /* ---------- FINAL ---------- */
+
+    .final {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .final-content {
+      max-width: 750px;
+    }
+
+    .final-heart {
+      font-size: 65px;
+      animation: heartbeat 1.5s infinite;
+      margin-bottom: 30px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+    .final h2 {
+      font-size: clamp(40px, 8vw, 75px);
+    }
+
+    .final p {
+      font-size: 20px;
+      line-height: 1.9;
+      color: #c9bbc1;
+    }
+
+    .bebo {
+      margin-top: 45px;
+      color: #ff7198;
+      font-size: 26px;
+      font-style: italic;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #6e6267;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    /* ---------- MOBILE ---------- */
+
+    @media (max-width: 650px) {
+
+      section {
+        padding: 80px 18px;
+      }
+
+      .text {
+        font-size: 17px;
+      }
+
+      .promises {
+        grid-template-columns: 1fr;
+      }
+
+      .gym-card {
+        padding: 28px;
+      }
+
+      .letter-paper {
+        padding: 30px 22px;
+      }
+
+      .letter-paper p {
+        font-size: 16px;
+      }
+
+      .quote {
+        font-size: 19px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="stars">
+  <span class="star" style="left:8%;top:15%;"></span>
+  <span class="star" style="left:17%;top:45%;"></span>
+  <span class="star" style="left:28%;top:25%;"></span>
+  <span class="star" style="left:42%;top:12%;"></span>
+  <span class="star" style="left:55%;top:38%;"></span>
+  <span class="star" style="left:68%;top:18%;"></span>
+  <span class="star" style="left:79%;top:55%;"></span>
+  <span class="star" style="left:91%;top:30%;"></span>
+  <span class="star" style="left:35%;top:75%;"></span>
+  <span class="star" style="left:62%;top:82%;"></span>
+</div>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="small-text">
+      A little corner of the internet
+    </div>
+
+    <h1>
+      For <span>Chinnu</span>
+    </h1>
+
+    <div class="hero-subtitle">
+      From the boy you call <strong>Bebo</strong> ❤️
+      <br><br>
+      Some things are too big to fit inside a message.
+      <br>
+      So I made you a whole little world instead.
+    </div>
+
+    <div class="scroll">
+      ↓ &nbsp; keep scrolling, my love
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= DISTANCE ================= -->
+
+<section class="distance">
+
+  <div class="section-container">
+
+    <div class="section-label">
+      Us, even from far away
+    </div>
+
+    <h2>
+      Distance is strange.
+    </h2>
+
+    <div class="distance-line"></div>
+
+    <div class="distance-message">
+      You can be miles away from me...
+      <br>
+      and somehow still be
+      <strong>the closest person to my heart.</strong>
+    </div>
+
+    <div class="distance-line"></div>
+
+    <div class="text">
+
+      <p>
+        I hate the distance sometimes, Chinnu.
+      </p>
+
+      <p>
+        I hate that when I miss you, I can't simply walk over to you.
+        I can't just knock on your door, sit beside you, hold your hand,
+        or look at you and say, "I'm here."
+      </p>
+
+      <p>
+        There are moments when I wish the distance between us could disappear
+        for just five minutes.
+      </p>
+
+      <p>
+        Five minutes would be enough.
+      </p>
+
+      <p>
+        Just enough time to see you, hug you tightly, and remind myself that
+        you're real and that all these miles are worth crossing.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= GYM ================= -->
+
+<section>
+
+  <div class="section-container">
+
+    <div class="section-label">
+      Our little coincidence
+    </div>
+
+    <h2>
+      Different gyms.<br>
+      Same goal.
+    </h2>
+
+    <div class="gym-card">
+
+      <div class="gym-icon">🏋️‍♀️ ❤️ 🏋️‍♂️</div>
+
+      <h3>
+        Somewhere between your workout and mine...
+      </h3>
+
+      <p>
+        You're at your gym.
+        I'm at mine.
+        We're probably lifting different weights,
+        listening to different songs,
+        surrounded by different people.
+      </p>
+
+      <br>
+
+      <p>
+        But I love thinking that somewhere out there,
+        the girl I love is working hard too.
+      </p>
+
+      <br>
+
+      <p>
+        Maybe we're both tired.
+        Maybe we're both complaining about the last set.
+        Maybe we're both pretending we still have energy.
+      </p>
+
+      <br>
+
+      <p>
+        And somehow, even when we're not together,
+        we're still doing something together.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= MISSING HER ================= -->
+
+<section>
+
+  <div class="section-container">
+
+    <div class="section-label">
+      What I don't always say
+    </div>
+
+    <h2>
+      I miss you.
+    </h2>
+
+    <div class="text">
+
+      <p>
+        Not only during the big moments.
+      </p>
+
+      <p>
+        I miss you in the smallest ones.
+      </p>
+
+      <p>
+        When I see something funny and instinctively want to tell you.
+      </p>
+
+      <p>
+        When something happens during my day and I wish you were there
+        so I could tell you about it immediately.
+      </p>
+
+      <p>
+        When I'm tired and all I want is the comfort of talking to you.
+      </p>
+
+      <p>
+        At night, when everything becomes quiet,
+        somehow that's when I feel the distance the most.
+      </p>
+
+      <p>
+        I miss your presence.
+        I miss your voice.
+        I miss your little ways.
+        I miss simply having you close.
+      </p>
+
+      <p>
+        But more than anything...
+        I miss the version of life where I don't have to miss you.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= LETTER ================= -->
+
+<section class="letter">
+
+  <div class="section-container">
+
+    <div class="letter-paper">
+
+      <div class="section-label">
+        A letter from Bebo
+      </div>
+
+      <h2>
+        My Chinnu,
+      </h2>
+
+      <p>
+        I don't know exactly when you became such a huge part of my life.
+        Maybe it happened slowly. Maybe it happened without either of us
+        noticing.
+      </p>
+
+      <p>
+        But somewhere along the way, you stopped being just someone I love
+        and became someone I can't imagine my life without.
+      </p>
+
+      <p>
+        You became the person I look for in my notifications.
+        The person I want to tell things to.
+        The person whose happiness matters to me.
+        The person I miss when the day gets quiet.
+      </p>
+
+      <div class="quote">
+        "I don't need you to be beside me every second.
+        I just need to know that no matter how far apart we are,
+        we're still choosing each other."
+      </div>
+
+      <p>
+        Chinnu, I know long distance isn't always easy.
+        There will be days when we miss each other more than usual.
+        Days when a call isn't enough.
+        Days when we wish we could just be together.
+      </p>
+
+      <p>
+        But I want you to know that I am not scared of the distance.
+      </p>
+
+      <p>
+        Because distance is temporary.
+        What I feel for you isn't.
+      </p>
+
+      <p>
+        I want to see you achieve your dreams.
+        I want to see you become stronger, happier and more confident.
+        I want to be there cheering for you when things go right,
+        and holding you together when things don't.
+      </p>
+
+      <p>
+        I want to know all the versions of you.
+        The happy you.
+        The tired you.
+        The angry you.
+        The silly you.
+        The emotional you.
+        The girl who goes to the gym and gives her best.
+        The girl who sometimes needs someone to simply say,
+        "It's okay, I'm here."
+      </p>
+
+      <p>
+        And I want you to know that I am here.
+      </p>
+
+      <p>
+        Even from far away.
+      </p>
+
+      <p>
+        I may not be able to hold your hand today.
+        But I can still hold your heart carefully.
+      </p>
+
+      <p>
+        I may not be able to see you whenever I want.
+        But I will still look forward to every moment I get with you.
+      </p>
+
+      <p>
+        And one day, I hope all these video calls,
+        countdowns, missed hugs and "I wish you were here"
+        become stories we tell about the time when we were far apart.
+      </p>
+
+      <p>
+        Until then...
+      </p>
+
+      <p>
+        I'll keep loving you from here.
+      </p>
+
+      <p>
+        I'll keep missing you.
+      </p>
+
+      <p>
+        I'll keep choosing you.
+      </p>
+
+      <p>
+        And I'll keep waiting for the day when the distance between us
+        is finally nothing more than a memory.
+      </p>
+
+      <div class="signature">
+        Yours,<br>
+        Bebo ❤️
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PROMISES ================= -->
+
+<section>
+
+  <div class="section-container">
+
+    <div class="section-label">
+      Things I want you to remember
+    </div>
+
+    <h2>
+      A few promises.
+    </h2>
+
+    <div class="promises">
+
+      <div class="promise">
+        <span>❤️</span>
+        <p>
+          I promise to keep choosing you,
+          even on the difficult days.
+        </p>
+      </div>
+
+      <div class="promise">
+        <span>🌙</span>
+        <p>
+          I promise that distance will never make
+          you less important to me.
+        </p>
+      </div>
+
+      <div class="promise">
+        <span>🏋️‍♀️</span>
+        <p>
+          I promise to cheer for your goals,
+          your growth and every little victory.
+        </p>
+      </div>
+
+      <div class="promise">
+        <span>🤍</span>
+        <p>
+          I promise to keep making memories with you,
+          even when the miles make it difficult.
+        </p>
+      </div>
+
+      <div class="promise">
+        <span>🫂</span>
+        <p>
+          And when I finally get to see you,
+          I'm going to make up for every hug we missed.
+        </p>
+      </div>
+
+      <div class="promise">
+        <span>∞</span>
+        <p>
+          Most importantly,
+          I promise to never stop reminding you
+          how loved you are.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FINAL ================= -->
+
+<section class="final">
+
+  <div class="final-content">
+
+    <div class="final-heart">
+      ❤️
+    </div>
+
+    <h2>
+      Until I can hold you...
+    </h2>
+
+    <p>
+      I'll hold onto every call,
+      every message,
+      every memory,
+      every picture,
+      every laugh,
+      and every little piece of you
+      that makes the distance feel smaller.
+    </p>
+
+    <br>
+
+    <p>
+      And when you miss me,
+      remember this:
+    </p>
+
+    <br>
+
+    <p>
+      Somewhere out there,
+      your Bebo is probably looking at the same moon,
+      missing his Chinnu,
+      and smiling because he knows
+      he has someone worth waiting for.
+    </p>
+
+    <div class="bebo">
+      I love you, Chinnu. ❤️
+      <br><br>
+      — Your Bebo
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+  MADE WITH LOVE · FOR CHINNU · FROM BEBO ❤️
+</footer>
+
+
+<script>
+  // Create a few random stars
+  const stars = document.querySelector(".stars");
+
+  for (let i = 0; i < 60; i++) {
+    const star = document.createElement("span");
+    star.className = "star";
+
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 3 + "s";
+
+    stars.appendChild(star);
+  }
+</script>
+
+</body>
+</html>
